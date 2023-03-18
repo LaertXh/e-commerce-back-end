@@ -13,15 +13,13 @@ Product.belongsToMany(Tag, {
     model: ProductTag,
     unique: false,
   },
-  as: "product_tag",
 });
 
-Tag.belongsToMany(Traveller, {
+Tag.belongsToMany(Product, {
   through: {
-    model: Trip,
+    model: ProductTag,
     unique: false,
   },
-  as: "tag_product",
 });
 
 module.exports = {
